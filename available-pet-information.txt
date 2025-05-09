@@ -1,0 +1,7 @@
+1:test:cat:persian:baby:female:other-cats,small-children::Alice:Roberts:alice.roberts@gmail.com:Luna
+2:test:dog:golden retriever:young:male:other-dogs,small-children::Macy:Jones:macy.jones@yahoo.com:Maple
+3:test:dog:pomeranian:senior:male:other-dogs::Tom:Willis:tom.willis@gmail.com:Nimbus
+4:test:cat:tabby:baby:female:other-cats,other-dogs,small-children:Very friendly.:John:Smith:john.smith@outlook.com:Astra
+5:test:cat:mixed:adult:male:undefined::Sarah:Jones:sarah.jones@gmail.com:Haru
+6:test:dog:mixed:baby:male:small-children:Very playful.:George:Lowes:george.lowes@yahoo.ca:Hughes
+7:test:undefined:::undefined:undefined:::::

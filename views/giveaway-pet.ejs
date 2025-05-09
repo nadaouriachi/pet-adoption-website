@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Have a pet to give away</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/main.css">  <!-- Corrected path to static CSS -->
+</head>
+<body class="d-flex flex-column vh-100">
+
+    <!-- Header -->
+    <%- include('partials/header') %>
+
+    <!-- Main Content -->
+    <div class="container-fluid flex-grow-1 d-flex">
+        <div class="row flex-grow-1">
+            
+            <!-- Sidebar -->
+            <aside class="sidebar-container bg-secondary col-lg-2 col-md-3 col-sm-4 col-4 d-flex flex-column p-0">
+                <ul class="nav flex-column p-0">
+                    <li class="nav-item"><a class="nav-link" href="/">Home Page</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/find-pet">Find a dog/cat</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dog-care">Dog Care</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/cat-care">Cat Care</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/create-account">Create an account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/giveaway-pet">Have a pet to give away</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact-us">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                </ul>
+            </aside>
+    
+            <!-- Content -->
+            <main class="content-container col-lg-10 col-md-9 col-sm-8 col-8 p-4">
+                <h2>Have a pet to give away</h2>
+                <form id="giveaway-pet-form" action="/giveaway-pet" method="POST">
+                    <fieldset class="border p-3">
+                        <legend><h3>Pet Information</h3></legend>
+                        <div id="pet-info-text">
+                            <p>
+                                <label>
+                                    <input type="radio" name="pet-type" id="pet-type1" value="cat"> Cat
+                                </label>
+                                <label>
+                                    <input type="radio" name="pet-type" id="pet-type2" value="dog"> Dog
+                                </label>
+                            </p>
+                            <p>
+                                <label> 
+                                    Breed <input type="text" name="breed" id="breed1" size="15">
+                                </label>
+                                <label> 
+                                    OR <input type="checkbox" name="breed" id="breed2" value="mixed"> Mixed
+                                </label>
+                            </p>
+                            <p>
+                                <label> 
+                                    Age 
+                                    <select name="age" id="age">
+                                        <option value="">-- Please select --</option>
+                                        <option value="baby">Baby</option>
+                                        <option value="young">Young</option>
+                                        <option value="adult">Adult</option>
+                                        <option value="senior">Senior</option>
+                                    </select>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Gender
+                                    <input type="radio" name="gender" value="female"> Female
+                                </label>
+                                <label>
+                                    <input type="radio" name="gender" value="male"> Male
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Gets along with cats <input type="checkbox" id="other-cats" name="gets-along-with" value="other-cats"> <br>
+                                </label>
+                                <label>
+                                    Gets along with dogs <input type="checkbox" id="other-dogs" name="gets-along-with" value="other-dogs">
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Suitable for families with small children <input type="checkbox" id="small-children" name="gets-along-with" value="small-children">
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Additional information <br>
+                                    <textarea name="additional-info" id="additional-info" cols="30" rows="5"></textarea>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Owner's first name <input type="text" name="owner-first-name" id="owner-first-name" size="15">
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Owner's last name <input type="text" name="owner-last-name" id="owner-last-name" size="15">
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Owner's email <input type="text" name="owner-email" id="owner-email" size="15">
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    Pet's name <input type="text" name="pet-name" id="pet-name" size="15">
+                                </label>
+                            </p>
+                        </div>
+                    </fieldset>
+                    <p>
+                        <br>
+                        <input type="submit" id="submit" class="btn btn-primary">
+                        <input type="reset" id="clear" class="btn btn-primary">
+                        <% if (typeof message !== 'undefined' && message) { %>
+                            <span style="color: green; font-style: italic";><%= message %></span>
+                        <% } %>
+                    </p>
+                </form>
+            </main>
+        </div>
+    </div>
+
+   <!-- Footer -->
+   <%- include('partials/footer') %>
+
+   <script src="/js/script.js"></script>
+</body>
+</html>
